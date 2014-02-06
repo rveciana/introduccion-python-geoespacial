@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Meteorologia amb Python</title>
+	
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="deckjs/core/deck.core.css">
+	
+	<!-- Extension CSS files go here. Remove or add as needed. -->
+	<link rel="stylesheet" href="deckjs/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="deckjs/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="deckjs/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="deckjs/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="deckjs/extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="deckjs/extensions/scale/deck.scale.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="deckjs/themes/style/web-2.0.css">
+	
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="deckjs/themes/transition/horizontal-slide.css">
+	
+	<!-- Required Modernizr file -->
+	<script src="deckjs/modernizr.custom.js"></script>
+</head>
+<body class="deck-container">
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+<section class="slide" id="inicio">
+<h1>Introducción a Python para usos geoespaciales</h1>
+<img src="img/banner2014.png" alt="SIGTE">
+</section>
+<section class="slide" id="ponente">
+<h1>Roger Veciana i Rovira</h1>
+<img src="img/logo_meteo.gif" alt="meteocat">
+</section>
+<section  class="slide" id="inici">
+	<h2>Python: Qué es</h2>
+	<ul>
+		<li class="slide" id="lenguaje_interpretado">Lenguaje interpretado</li>
+		<li class="slide" id="tipos">Tipos dinámicos / Tipos fuertes</li>
+		<li class="slide" id="objetos">Orientado a objetos</li>
+		<li class="slide" id="multi">Multi-propósito</li>
+		<li class="slide" id="rápido">Pensado para ser rápido (de <a href="http://shop.oreilly.com/product/9781593274078.do" target="_blank">aprendrer</a>, de usar, de entender)</li>
+		<li class="slide" id="limpio">Pensado para crear un código uniforme y limpio</li>
+	</ul>
+</section>
+<section class="slide" id="ventajas">
+	<h2>Python: Algunas ventajas</h2>
+	<ul>
+		<li class="slide" id="simple_complejo">Permite abordar problemas simples de forma simple y problemas complejos
+			<ul>
+				<li>Programación tipo script</li>
+				<li>Programación orientada a objetos con excepciones, etc</li>
+			</ul>
+		</li>
+		<li class="slide" id="batteries">Librería estándard muy grande: "batteries included"</li>
+		<li class="slide" id="librerias">Muchas librerías y <em>frameworks</em> que lo extienden
+			<ul>
+				<li>Creación de entornos web</li>
+				<li>Administración de sistemas</li>
+				<li>Llibrerías científicas y geogràfiques</li>	
+				<li>Programación en paralelo</li>			
+			</ul>
+		</li>
+		<li class="slide" id="pega">Python <em>pega</em> librerías de distintos lenguajes.</li>
+		<li class="slide" id="interactivo">Tiene aplicaciones que permiten usarlo de forma interactiva <em>ipython, SAGE</em></li>
+	</ul>
+</section>
+<section class="slide" id="python1">
+<h2>Instrucciones básicas de python</h2>
+</code><pre>a = 3
+b = 4
+a + b
+</pre></code>
+<div class="slide" id="python1_1">
+<h3>Condicionales</h3>
+</code><pre>if b > a:
+    print "b es mayor que a"
+</pre></code>
+</div>
+<div class="slide" id="python1_2">
+<h3>Iteraciones</h3>
+</code><pre>for i in range(10):
+    print "Iteración número " + str(i)
+</pre></code>
+</div>
+</section>
+<section class="slide" id="gdal">
+	<h2>GDAL/OGR</h2>
+	<em>Geospatial Data Abstraction Library</em>
+	<ul>
+		<li class="slide" id="que_es_GDAL">Modelo de datos abstracto para leer formatos GIS raster y vectorialModel de dades abstacte per a llegir formats GIS vectorials i ràster</li>
+		<li class="slide" id="formatos_GDAL">Más de 150 formatos soportados:
+			<ul>
+				<li>GeoTIFF</li>
+				<li>ENVI</li>
+				<li>Shapefile</li>
+				<li>PostGIS</li>
+				<li>GRIB</li>
+				<li>NetCDF</li>
+				<li>VAISALA IRIS</li>
+			</ul>
+		</li>
+		<li class="slide" id="GDAL_python">Usada por muchas aplicaciones y programada en C, tiene <em>bindings</em> en Python</li>
+		<li class="slide" id="GDAL_que_hace">Lectura/Escritura/Cambios de coordenadas/Operaciones GIS</li>
+	</ul>
+</section>
+<section class="slide" id="wkt_proyeccion">
+	<h2><a href="http://www.geoapi.org/3.0/javadoc/org/opengis/referencing/doc-files/WKT.html">Formato WKT</a> de las proyecciones</h2>
+	<p class="slide" id="wkt_nombre_proyeccion">'PROJCS["ETRS89 / UTM zone 31N", <mark>Nombre de la proyección (arbitratrio)</mark></p>
+	<p class="slide" id="wkt_datum1">GEOGCS["ETRS89", <mark>Código del Datum</mark><br/>
+	DATUM["European_Terrestrial_Reference_System_1989", <mark>Nombre del Datum</mark><br/>
+    SPHEROID["GRS 1980",6378137,298.2572221010002, AUTHORITY["EPSG","7019"]], <mark>Definición del elipsoide</mark>
+	</p>
+	<p class="slide" id="wkt_datum2">
+		TOWGS84[0,0,0,0,0,0,0],AUTHORITY["EPSG","6258"]], <mark>Transformación aproximada del datum a WGS84. 0 indica que el programa asume que son similares</mark></br>
+    PRIMEM["Greenwich",0],<mark>Meridiano de referencia</mark><br/>
+    UNIT["degree",0.0174532925199433],AUTHORITY["EPSG","4258"]],<mark>Transofmación a radianes</mark></p>
+	<p  class="slide" id="wkt_proyeccion2">
+ 	PROJECTION["Transverse_Mercator"],<mark>Etiqueta que define la proyección que usará proj4</mark>
+ 	</p>
+ 	<p  class="slide" id="wkt_proyeccion3">
+	PARAMETER["latitude_of_origin",0],<br/>
+	PARAMETER["central_meridian",3],<br/>
+	PARAMETER["scale_factor",0.9996],<br/>
+	PARAMETER["false_easting",500000],<br/>
+	PARAMETER["false_northing",0], <mark>Parámetros de la proyección UTM</mark><br/>
+	UNIT["metre",1,AUTHORITY["EPSG","9001"]],AUTHORITY["EPSG","25831"]]' <mark>Unidades usadas</mark>
+</p>
+</section>
+
+<section class="slide" id="geotransform">
+	<h2>Geotransform</h2>
+	<pre><code>(258047, 1000, 0.0, 4753640, 0.0, -1000)</code></pre>
+	<div class="slide" id="geotransform_img">
+	<img src="img/geotransform.png"/>
+	<p align="center">Xgeo = gt(0) + Xpixel*gt(1) + Yline*gt(2)<br/>
+	Ygeo = gt(3) + Xpixel*gt(4) + Yline*gt(5)</p>
+	</div>
+
+    <pre class="slide" id="get_geotransform"><code>geotransform = ds.GetGeoTransform()
+gdal.ApplyGeoTransform(geotransform, x, y)
+gdal.InvGeoTransform(geotransform)</code></pre>
+</section>
+<!-- End slides. -->
+
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<!-- End extension snippets. -->
+
+
+<!-- Required JS files. -->
+<script src="deckjs/jquery-1.7.2.min.js"></script>
+<script src="deckjs/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="deckjs/core/deck.core.js"></script>
+<script src="deckjs/extensions/hash/deck.hash.js"></script>
+<script src="deckjs/extensions/menu/deck.menu.js"></script>
+<script src="deckjs/extensions/goto/deck.goto.js"></script>
+<script src="deckjs/extensions/status/deck.status.js"></script>
+<script src="deckjs/extensions/navigation/deck.navigation.js"></script>
+<script src="deckjs/extensions/scale/deck.scale.js"></script>
+<!--
+<script src="deckjs/extensions/markdown/Markdown.Converter.js"></script>
+<script src="deckjs/extensions/markdown/deck.markdown.js"></script> -->
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
