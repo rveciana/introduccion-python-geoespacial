@@ -100,9 +100,7 @@ a + 1
 a.sum()
 a[3:6,4:8]
 a[3:6,4:8] = 2
-a[[2,3],[4,4]] 
-
-</pre></code>
+a[[2,3],[4,4]]</pre></code>
 
 </section>
 <section class="slide" id="gdal">
@@ -127,7 +125,13 @@ a[[2,3],[4,4]]
 </section>
 <section class="slide" id="gdal">
 	<h2>Ejemplo de uso de GDAL</h2>
-
+	<p>El archivo con los ejemplos es <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/gdal_ejemplos.py">gdal_ejemplos.py</a></p>
+	<img src="img/gdal.png"/>
+</section>
+<section class="slide" id="fiona">
+	<h2>Ejemplo de uso de fiona</h2>
+	<p>El archivo con los ejemplos es <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/fiona_ejemplos.py">fiona_ejemplos.py</a></p>
+	<img src="img/fiona.png"/>
 </section>
 <section class="slide" id="wkt_proyeccion">
 	<h2><a href="http://www.geoapi.org/3.0/javadoc/org/opengis/referencing/doc-files/WKT.html">Formato WKT</a> de las proyecciones</h2>
@@ -165,6 +169,11 @@ a[[2,3],[4,4]]
     <pre class="slide" id="get_geotransform"><code>geotransform = ds.GetGeoTransform()
 gdal.ApplyGeoTransform(geotransform, x, y)
 gdal.InvGeoTransform(geotransform)</code></pre>
+</section>
+<section class="slide" id="mayavi">
+	<h2>Ejemplo de uso de Mayavi2</h2>
+	<p>El archivo con los ejemplos es <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/mayavi_ejemplos.py">mayavi_ejemplos.py</a></p>
+	<img src="img/mayavi.png"/>
 </section>
 <!-- End slides. -->
 
