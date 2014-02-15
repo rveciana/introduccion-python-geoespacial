@@ -73,22 +73,37 @@
 </section>
 <section class="slide" id="python1">
 <h2>Instrucciones básicas de python</h2>
-</code><pre>a = 3
+<code><pre>a = 3
 b = 4
 a + b
 </pre></code>
 <div class="slide" id="python1_1">
 <h3>Condicionales</h3>
-</code><pre>if b > a:
+<code><pre>if b > a:
     print "b es mayor que a"
 </pre></code>
 </div>
 <div class="slide" id="python1_2">
 <h3>Iteraciones</h3>
-</code><pre>for i in range(10):
+<code><pre>for i in range(10):
     print "Iteración número " + str(i)
 </pre></code>
 </div>
+</section>
+<section class="slide" id="numpy">
+	<h2>NumPy para el tratamiento de matrices</h2>
+	<p>Abrir consola <em>ipython</em></p>
+	<code><pre>import numpy
+a = numpy.ones((20,10))
+a * 23
+a + 1
+a.sum()
+a[3:6,4:8]
+a[3:6,4:8] = 2
+a[[2,3],[4,4]] 
+
+</pre></code>
+
 </section>
 <section class="slide" id="gdal">
 	<h2>GDAL/OGR</h2>
@@ -109,6 +124,10 @@ a + b
 		<li class="slide" id="GDAL_python">Usada por muchas aplicaciones y programada en C, tiene <em>bindings</em> en Python</li>
 		<li class="slide" id="GDAL_que_hace">Lectura/Escritura/Cambios de coordenadas/Operaciones GIS</li>
 	</ul>
+</section>
+<section class="slide" id="gdal">
+	<h2>Ejemplo de uso de GDAL</h2>
+
 </section>
 <section class="slide" id="wkt_proyeccion">
 	<h2><a href="http://www.geoapi.org/3.0/javadoc/org/opengis/referencing/doc-files/WKT.html">Formato WKT</a> de las proyecciones</h2>
