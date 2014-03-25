@@ -83,9 +83,21 @@ for point in c:
     print shape(point['geometry']).buffer(1)   
 
 #La operación inversa, para guardar las geometrías con fiona, es mapping
+# <demo> --- stop ---
+#Distancia entre dos puntos
+a = {'type': 'Point', 'coordinates': ((1, 40))}
+b = {'type': 'Point', 'coordinates': ((0.5, 40))}
+print shape(a).distance(shape(b))
 
 # <demo> --- stop ---
+#Intersección de dos LineString
 
+a = {'type': 'LineString', 'coordinates': ((1, 40),(2,41))}
+b = {'type': 'LineString', 'coordinates': ((0.5, 40),(2.5,41))}
+print shape(a).crosses(shape(b))
+print shape(a).intersection(shape(b))
+
+# <demo> --- stop ---
 #Un ejemplo un poco más complicado: Determinar cuantos rayos han caído en cada comarca
 
 from shapely.geometry import shape
