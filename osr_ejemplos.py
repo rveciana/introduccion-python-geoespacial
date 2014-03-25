@@ -60,3 +60,14 @@ transf = osr.CoordinateTransformation(proj_in, proj_out)
 punto = transf.TransformPoint(gt[0], gt[3])
 
 print punto
+
+# <demo> --- stop ---
+#Usar las funciones de GeoTransform
+#Píxel a coordenadas:
+gt = (1,1,0,1,0,1)
+gdal.ApplyGeoTransform(gt,1,1)
+
+result, inv_gt = gdal.InvGeoTransform(gt)
+gdal.ApplyGeoTransform(inv_gt,1,1)
+#Coordenadas a pixel
+# <demo> --- stop ---
