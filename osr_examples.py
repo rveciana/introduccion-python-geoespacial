@@ -2,29 +2,24 @@
 """
 8as Jornadas Sig Libre 
 26 de Marzo de 2014
-Introducción a Python para usos geoespaciales
+Introduction to Python for geospatial uses
 
-Ejemplos para trabajar con las proyecciones (osr/python)
+Examples for using fiona to work with projections (osr/python)
 """
 
 from osgeo import gdal
 from osgeo import osr
 
-#Abrir un dataset
+#Open a dataset
 ds = gdal.Open('data/XXX_RN1_20131117_0000_CMPAC1C_1h.tif')
 # <demo> --- stop ---
 
-#Ver todos los métodos disponibles:
-help(ds)
-# <demo> --- stop ---
-
-
-#Leer los metadatos de la proyección:
-#Proyección:
+#Reading the projection metadata:
+#Projection:
 proj_in = ds.GetProjection()
 
 print proj_in
-#Información sobre el formato: 
+#Information about the used format: 
 #http://www.geoapi.org/3.0/javadoc/org/opengis/referencing/doc-files/WKT.html
 
 # <demo> --- stop ---
@@ -47,12 +42,12 @@ print gt
 
 # <demo> --- stop ---
 
-#Cambio de proyección para un punto:
+#Projection change for a point:
 
 proj_out = osr.SpatialReference()
 proj_out.ImportFromEPSG(4326)
 
-#proj_in es texto por defecto, y hay que convertirlo en un objeto SpatialReference:
+#proj_in is a String, so it must be converted to a SpatialReference object:
 proj_in = osr.SpatialReference(proj_in)
 
 transf = osr.CoordinateTransformation(proj_in, proj_out)
@@ -62,12 +57,12 @@ punto = transf.TransformPoint(gt[0], gt[3])
 print punto
 
 # <demo> --- stop ---
-#Usar las funciones de GeoTransform
-#Píxel a coordenadas:
+#using the geotransform functions
+#Pixel to coordinates:
 gt = (1,1,0,1,0,1)
 gdal.ApplyGeoTransform(gt,1,1)
 
-#Coordenadas a pixel
+#Coordinates to pixel
 result, inv_gt = gdal.InvGeoTransform(gt)
 gdal.ApplyGeoTransform(inv_gt,1,1)
 
