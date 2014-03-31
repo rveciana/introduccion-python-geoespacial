@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=1024, user-scalable=no">
 
-	<title>Introducción a Python para usos geoespaciales</title>
+	<title>Introduction to Python for geospatial uses</title>
 	
 	<!-- Required stylesheet -->
 	<link rel="stylesheet" href="deckjs/core/deck.core.css">
@@ -31,7 +31,7 @@
 
 <!-- Begin slides. Just make elements with a class of slide. -->
 <section class="slide" id="inicio">
-<h1>Introducción a Python para usos geoespaciales</h1>
+<h1>Introduction to Python for geospatial uses</h1>
 <img src="img/banner2014.png" alt="SIGTE">
 </section>
 <section class="slide" id="ponente">
@@ -41,60 +41,60 @@
 <h3>Blog: <a href="http://geoexamples.blogspot.com">http://geoexamples.blogspot.com</a></h3>
 </section>
 <section  class="slide" id="inici">
-	<h2>Python: Qué es</h2>
+	<h2>Python: What is it</h2>
 	<ul>
-		<li class="slide" id="lenguaje_interpretado">Lenguaje interpretado</li>
-		<li class="slide" id="tipos">Tipos dinámicos / Tipos fuertes</li>
-		<li class="slide" id="objetos">Orientado a objetos</li>
-		<li class="slide" id="multi">Multi-propósito</li>
-		<li class="slide" id="rápido">Pensado para ser rápido (de <a href="http://shop.oreilly.com/product/9781593274078.do" target="_blank">aprendrer</a>, de usar, de entender)</li>
-		<li class="slide" id="limpio">Pensado para crear un código uniforme y limpio</li>
+		<li class="slide" id="lenguaje_interpretado">An interpreted language</li>
+		<li class="slide" id="tipos">Dynamic types / Strong types</li>
+		<li class="slide" id="objetos">Object oriented</li>
+		<li class="slide" id="multi">Multi-purpose</li>
+		<li class="slide" id="rápido">Thought to be fast (to <a href="http://shop.oreilly.com/product/9781593274078.do" target="_blank">learn</a>, to use, to understand)</li>
+		<li class="slide" id="limpio">Thought to create a clean an uniform code</li>
 	</ul>
 </section>
 <section class="slide" id="ventajas">
-	<h2>Python: Algunas ventajas</h2>
+	<h2>Python: Some advantages</h2>
 	<ul>
-		<li class="slide" id="simple_complejo">Permite abordar problemas simples de forma simple y problemas complejos
+		<li class="slide" id="simple_complejo">Allows to address simple problems in a simple way, but also complex problems
 			<ul>
-				<li>Programación tipo script</li>
-				<li>Programación orientada a objetos con excepciones, etc</li>
+				<li>Script like coding</li>
+				<li>Object oriented programming with exceptions, etc</li>
 			</ul>
 		</li>
-		<li class="slide" id="batteries">Librería estándard muy grande: "batteries included"</li>
-		<li class="slide" id="librerias">Muchas librerías y <em>frameworks</em> que lo extienden
+		<li class="slide" id="batteries">Big standard library: "batteries included"</li>
+		<li class="slide" id="librerias">Lots of libraries and frameworksthat extend it
 			<ul>
-				<li>Creación de entornos web</li>
-				<li>Administración de sistemas</li>
-				<li>Llibrerías científicas y geogràfiques</li>	
-				<li>Programación en paralelo</li>			
+				<li>Web creation</li>
+				<li>System administration</li>
+				<li>Scientific and geographic libraries</li>	
+				<li>Parallel programming</li>			
 			</ul>
 		</li>
-		<li class="slide" id="pega">Python <em>une</em> librerías de distintos lenguajes.</li>
-		<li class="slide" id="interactivo">Tiene aplicaciones que permiten usarlo de forma interactiva <em>ipython, SAGE</em></li>
+		<li class="slide" id="pega">Python <em>glues</em> libraries coded in different languages.</li>
+		<li class="slide" id="interactivo">Software that allows using it interactively: <em>ipython, SAGE</em></li>
 	</ul>
 </section>
 <section class="slide" id="python1">
-<h2>Instrucciones básicas de python</h2>
+<h2>Python basic instructions</h2>
 <code><pre>a = 3
 b = 4
 a + b
 </pre></code>
 <div class="slide" id="python1_1">
-<h3>Condicionales</h3>
+<h3>Conditions</h3>
 <code><pre>if b > a:
-    print "b es mayor que a"
+    print "b is bigger than a"
 </pre></code>
 </div>
 <div class="slide" id="python1_2">
-<h3>Iteraciones</h3>
+<h3>Iterate</h3>
 <code><pre>for i in range(10):
-    print "Iteración número " + str(i)
+    print "Iteration number " + str(i)
 </pre></code>
 </div>
 </section>
 <section class="slide" id="numpy">
-	<h2>NumPy para el tratamiento de matrices</h2>
-	<p>Abrir consola <em>ipython</em></p>
+	<h2>NumPy for matrix calculations</h2>
+	<p>Open the <em>ipython</em> console</p>
 	<code><pre>import numpy
 a = numpy.ones((20,10))
 a * 23
@@ -103,10 +103,10 @@ a.sum()
 a[3:6,4:8]
 a[3:6,4:8] = 2
 a[[2,3],[4,4]]</pre></code>
-<p>Probar</p>
-<ul><li>Otras funciones: <em>max()</em>, <em>mean()</em> (probar a pasar axis=1 de argumento), <em>reshape()</em>, <em>numpy.gradient(a)</em>, <em>numpy.arange()</em></li>
-<li>Indexación con otros arrays: <em>a[b]</em>, <em>a[b,c]</em></li>
-<li>Operadores lógicos: <em>a>2</em></li>
+<p>Try</p>
+<ul><li>Other functions: <em>max()</em>, <em>mean()</em> (try to pass axis=1 as an argument), <em>reshape()</em>, <em>numpy.gradient(a)</em>, <em>numpy.arange()</em></li>
+<li>Otros array indexation: <em>a[b]</em>, <em>a[b,c]</em></li>
+<li>Logical operations: <em>a>2</em></li>
 </ul>
 
 </section>
@@ -114,8 +114,8 @@ a[[2,3],[4,4]]</pre></code>
 	<h2>GDAL/OGR</h2>
 	<em>Geospatial Data Abstraction Library</em>
 	<ul>
-		<li class="slide" id="que_es_GDAL">Modelo de datos abstracto para leer formatos GIS raster y vectorial</li>
-		<li class="slide" id="formatos_GDAL">Más de 150 formatos soportados:
+		<li class="slide" id="que_es_GDAL">Abstract data model for reading raster and vectorial GIS formats</li>
+		<li class="slide" id="formatos_GDAL">More than 150 supported formats:
 			<ul>
 				<li>GeoTIFF</li>
 				<li>ENVI</li>
@@ -126,63 +126,63 @@ a[[2,3],[4,4]]</pre></code>
 				<li>VAISALA IRIS</li>
 			</ul>
 		</li>
-		<li class="slide" id="GDAL_python">Usada por muchas aplicaciones y programada en C, tiene <em>bindings</em> en Python</li>
-		<li class="slide" id="GDAL_que_hace">Lectura/Escritura/Cambios de coordenadas/Operaciones GIS</li>
+		<li class="slide" id="GDAL_python">Used by many applications and written in C, has Python <em>bindings</em></li>
+		<li class="slide" id="GDAL_que_hace">Reading/Writting/Coordinate changes/GIS Operations</li>
 	</ul>
 </section>
 <section class="slide" id="gdal">
-	<h2>Ejemplo de uso de GDAL</h2>
-	<p>El archivo con los ejemplos es <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/gdal_ejemplos.py">gdal_ejemplos.py</a></p>
+	<h2>GDAL usage</h2>
+	<p>The examples file is <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/gdal_examples.py">gdal_examples.py</a></p>
 	<img src="img/gdal.png"/>
 </section>
 <section class="slide" id="gdal_ejercicios">
-	<h2>Ejercicios GDAL</h2>
+	<h2>GDAL exercices</h2>
 	<ul>
-		<li>Suma de dos arrays</li>
-		<li>Zonas con más de seis litros en una hora</li>
-		<li>Zonas donde no llovió a las 00 y si que llovió a las 01</li>
-		<li>Número de horas de lluvia</li>
-		<li>Zonas en las que ha llovido todo el dia</li>
+		<li>Adding two arrays</li>
+		<li>Zones with more than sis liters in one hour</li>
+		<li>Zones without rain at 00 and rain at 01 hours</li>
+		<li>Total number of raining hours</li>
+		<li>Zones where has rained all the day</li>
 	</ul>
 </section>
 <section class="slide" id="fiona">
-	<h2>Ejemplo de uso de fiona</h2>
-	<p>El archivo con los ejemplos es <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/fiona_ejemplos.py">fiona_ejemplos.py</a></p>
+	<h2>Fiona usage example</h2>
+	<p>The file with the examples is <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/fiona_examples.py">fiona_examples.py</a></p>
 	<img src="img/fiona.png"/>
 </section>
 <section class="slide" id="fiona_ejercicios">
-	<h2>Ejercicios Fiona</h2>
+	<h2>Fiona exercices</h2>
 	<ul>
-		<li>Buscar la distancia entre dos puntos con la función distance()</li>
-		<li>Si un linestring se crea de la forma: {'type': 'LineString', 'coordinates': ((1, 40),(2,41))}, usar la función <em>crosses</em> e <em>intersection</em> entre dos linestrings</li>
-		<li>Determinar cuantos rayos han caído en cada comarca (usar <em>comarcas.shp</em> y <em>llamps.shp</em>)</li>
+		<li>Find the distance between two points with the distance() function</li>
+		<li>If a linestring is created as: {'type': 'LineString', 'coordinates': ((1, 40),(2,41))}, use the function <em>crosses</em> and <em>intersection</em> between two linestrings</li>
+		<li>Calculate hoe many lightnings have fallen in each <em>comarca</em> (use <em>comarcas.shp</em> and <em>llamps.shp</em>)</li>
 
 	</ul>
 </section>
 <section class="slide" id="projection">
-	<h2>Uso de proyecciones</h2>
-	<p>El archivo con los ejemplos es <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/osr_ejemplos.py">osr_ejemplos.py</a></p>
+	<h2>Projections usage</h2>
+	<p>The file with the examples is <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/osr_examples.py">osr_examples.py</a></p>
 
-	<h2 class="slide" id="wkt_proyeccion"><a href="http://www.geoapi.org/3.0/javadoc/org/opengis/referencing/doc-files/WKT.html">Formato WKT</a> de las proyecciones</h2>
-	<p class="slide" id="wkt_nombre_proyeccion">'PROJCS["ETRS89 / UTM zone 31N", <mark>Nombre de la proyección (arbitratrio)</mark></p>
-	<p class="slide" id="wkt_datum1">GEOGCS["ETRS89", <mark>Código del Datum</mark><br/>
-	DATUM["European_Terrestrial_Reference_System_1989", <mark>Nombre del Datum</mark><br/>
-    SPHEROID["GRS 1980",6378137,298.2572221010002, AUTHORITY["EPSG","7019"]], <mark>Definición del elipsoide</mark>
+	<h2 class="slide" id="wkt_proyeccion">Projections <a href="http://www.geoapi.org/3.0/javadoc/org/opengis/referencing/doc-files/WKT.html">WKT format</a></h2>
+	<p class="slide" id="wkt_nombre_proyeccion">'PROJCS["ETRS89 / UTM zone 31N", <mark>Projection name (arbitrary)</mark></p>
+	<p class="slide" id="wkt_datum1">GEOGCS["ETRS89", <mark>Datum code</mark><br/>
+	DATUM["European_Terrestrial_Reference_System_1989", <mark>Datum name</mark><br/>
+    SPHEROID["GRS 1980",6378137,298.2572221010002, AUTHORITY["EPSG","7019"]], <mark>Ellipsoid definition</mark>
 	</p>
 	<p class="slide" id="wkt_datum2">
-		TOWGS84[0,0,0,0,0,0,0],AUTHORITY["EPSG","6258"]], <mark>Transformación aproximada del datum a WGS84. 0 indica que el programa asume que son similares</mark></br>
-    PRIMEM["Greenwich",0],<mark>Meridiano de referencia</mark><br/>
-    UNIT["degree",0.0174532925199433],AUTHORITY["EPSG","4258"]],<mark>Transofmación a radianes</mark></p>
+		TOWGS84[0,0,0,0,0,0,0],AUTHORITY["EPSG","6258"]], <mark>Aproximate transformatino toWGS84. 0 indicates that PROJ assumes that the projections are similar</mark></br>
+    PRIMEM["Greenwich",0],<mark>Reference meridian</mark><br/>
+    UNIT["degree",0.0174532925199433],AUTHORITY["EPSG","4258"]],<mark>Transformation to radians</mark></p>
 	<p  class="slide" id="wkt_proyeccion2">
- 	PROJECTION["Transverse_Mercator"],<mark>Etiqueta que define la proyección que usará proj4</mark>
+ 	PROJECTION["Transverse_Mercator"],<mark>Label defining the projection that proj4 will use</mark>
  	</p>
  	<p  class="slide" id="wkt_proyeccion3">
 	PARAMETER["latitude_of_origin",0],<br/>
 	PARAMETER["central_meridian",3],<br/>
 	PARAMETER["scale_factor",0.9996],<br/>
 	PARAMETER["false_easting",500000],<br/>
-	PARAMETER["false_northing",0], <mark>Parámetros de la proyección UTM</mark><br/>
-	UNIT["metre",1,AUTHORITY["EPSG","9001"]],AUTHORITY["EPSG","25831"]]' <mark>Unidades usadas</mark>
+	PARAMETER["false_northing",0], <mark>UTM projection parameters</mark><br/>
+	UNIT["metre",1,AUTHORITY["EPSG","9001"]],AUTHORITY["EPSG","25831"]]' <mark>Used units</mark>
 </p>
 </section>
 
@@ -200,22 +200,22 @@ gdal.ApplyGeoTransform(geotransform, x, y)
 gdal.InvGeoTransform(geotransform)</code></pre>
 </section>
 <section class="slide" id="mayavi">
-	<h2>Ejemplo de uso de Mayavi2</h2>
-	<p>El archivo con los ejemplos es <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/mayavi_ejemplos.py">mayavi_ejemplos.py</a></p>
+	<h2>Mayavi2 usage</h2>
+	<p>The examples file is <a href="https://github.com/rveciana/introduccion-python-geoespacial/blob/master/mayavi_examples.py">mayavi_examples.py</a></p>
 	<img src="img/mayavi.png"/>
 </section>
 <section class="slide" id="recursos">
-	<h2>Algunos recursos</h2>
+	<h2>Some links</h2>
 	<ul>
-		<li><a href="http://wiki.scipy.org/Tentative_NumPy_Tutorial">Tutorial de NumPy</a></li>
-		<li><a href="http://geotux.tuxfamily.org/index.php/es/component/k2/item/330-modulos-python-con-finalidad-espacial-que-por-que-para-que-y-como">Listado de módulos geoespaciales para Python</a></li>
+		<li><a href="http://wiki.scipy.org/Tentative_NumPy_Tutorial">NumPy Tutorial</a></li>
+		<li><a href="http://geotux.tuxfamily.org/index.php/es/component/k2/item/330-modulos-python-con-finalidad-espacial-que-por-que-para-que-y-como">List of 300 geospatial python moudules (in Spanish)</a></li>
 		<li><a href="http://pcjericks.github.io/py-gdalogr-cookbook/">ogr/gdal cookbook</li>
-		<li><a href="http://matplotlib.org/basemap/users/examples.html">Ejemplos de uso de Basemap</a></li>
-		<li><a href="http://www.gis.usu.edu/~chrisg/python/2009/">Curso de geoprocesamiento con python</a></li>
+		<li><a href="http://matplotlib.org/basemap/users/examples.html">Basemap usage examples</a></li>
+		<li><a href="http://www.gis.usu.edu/~chrisg/python/2009/">Python geoprocessing course</a></li>
 	</ul>
 </section>
 <section class="slide" id="final">
-	<h1>Muchas gracias</h1>
+	<h1>Thank you</h1>
 </section>
 <!-- End slides. -->
 
