@@ -26,7 +26,7 @@ help(ds)
 # <demo> --- stop ---
 
 """
-Leer los metadatos:
+Reading the metadata:
 
 """
 #Projection:
